@@ -1,7 +1,15 @@
+import {useRouter} from 'next/router';
 import Card from '../ui/Card';
 import classes from './CityItem.module.css';
 
 function CityItem(props) {
+
+  const router = useRouter();
+
+  const showDetailHandler = () => {
+    router.push(`/${props.id}`);
+  }
+
   return (
     <li className={classes.item}>
       <Card>
@@ -10,10 +18,10 @@ function CityItem(props) {
         </div>
         <div className={classes.content}>
           <h3>{props.title}</h3>
-          <address>{props.address}</address>
+          <address>{props.country}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button onClick={showDetailHandler}>Show Details</button>
         </div>
       </Card>
     </li>

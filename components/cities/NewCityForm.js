@@ -6,7 +6,7 @@ import classes from './NewCityForm.module.css';
 function NewCityForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
-  const addressInputRef = useRef();
+  const countryInputRef = useRef();
   const descriptionInputRef = useRef();
 
   function submitHandler(event) {
@@ -14,13 +14,13 @@ function NewCityForm(props) {
 
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
+    const enteredCountry = countryInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
     const cityData = {
       title: enteredTitle,
       image: enteredImage,
-      address: enteredAddress,
+      country: enteredCountry,
       description: enteredDescription,
     };
 
@@ -39,8 +39,8 @@ function NewCityForm(props) {
           <input type='url' required id='image' ref={imageInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='address'>Address</label>
-          <input type='text' required id='address' ref={addressInputRef} />
+          <label htmlFor='address'>Country</label>
+          <input type='text' required id='country' ref={countryInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
