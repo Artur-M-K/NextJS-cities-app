@@ -32,10 +32,34 @@ const DUMMY_DATA = [
 
 ]
 
-const HomePage = () => {
+const HomePage = (props) => {
+
    return  (
-        <CityList cities={DUMMY_DATA} />
+        <CityList cities={props.cities} />
    )
+}
+
+// export const getServerSideProps = async(context) => {
+
+//     const req = context.req;
+//     const res = context.res;
+
+//     //fetch data from an api or database
+//     return {
+//         props: {
+//             cities: DUMMY_DATA
+//         }
+//     };
+// }
+
+export const getStaticProps =  async() => {
+    //fetch data from an api or database
+    return {
+        props: {
+            cities: DUMMY_DATA
+        },
+        revalidate: 10
+    };
 }
 
 export default HomePage;
