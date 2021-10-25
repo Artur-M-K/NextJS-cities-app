@@ -17,8 +17,9 @@ function CityItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.country}</address>
+          <h1>{props.title.toUpperCase()}</h1>
+          <hr className={classes.hr}/>
+          <h3>{props.country}</h3>
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailHandler}>Show Details</button>

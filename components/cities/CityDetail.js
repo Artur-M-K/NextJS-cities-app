@@ -10,9 +10,12 @@ const CityDetail = (props) => {
 
     return (
     <section className={classes.detail}>
+        
+        <div className={classes.name}>
+            <h1>{props.title} </h1>
+            <h4>{props.country}</h4>
+        </div>
         <img src={props.image} alt={props.title} />
-        <h1>{props.title} </h1>
-        <h4>{props.country}</h4>
         <p>{props.description}</p>
         <div className={classes.actions}>
             <button onClick={onClickHandler}>Back</button>
