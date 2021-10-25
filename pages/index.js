@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 import CityList from '../components/cities/CityList';
 
@@ -36,7 +37,13 @@ import CityList from '../components/cities/CityList';
 const HomePage = (props) => {
 
    return  (
+    <>
+       <Head>
+           <title>Capitals around the World</title>
+           <meta name="description" content="Capitals around the World. Browse a huge list of capitals" />
+       </Head>
         <CityList cities={props.cities} />
+    </>
    )
 }
 

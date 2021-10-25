@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 import NewCityForm from "../../components/cities/NewCityForm";
 
 const NewCityPage = () => {
@@ -20,7 +21,13 @@ const NewCityPage = () => {
     };
 
     return (
+        <>
+        <Head>
+           <title>Add a new Capital</title>
+           <meta name="description" content="Add a new Capital to the database" />
+       </Head>
         <NewCityForm onAddCity={addCityHandler}/>
+        </>
     )
 }
 

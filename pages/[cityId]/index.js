@@ -1,15 +1,22 @@
 import React from 'react';
+import Head from 'next/head';
 import { MongoClient, ObjectId } from 'mongodb';
 import CityDetail from '../../components/cities/CityDetail';
 
 const CityDetails = (props) => {
     return (
+        <>
+        <Head>
+           <title>{props.cityData.title}</title>
+           <meta name="description" content={props.cityData.description} />
+       </Head>
         <CityDetail
             image={props.cityData.image}
             title={props.cityData.title}
             country={props.cityData.country}
             description={props.cityData.description}
         />
+        </>
     )
 }
 
