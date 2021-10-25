@@ -32,7 +32,7 @@ export const getStaticPaths = async() => {
    client.close();
 
     return {
-        fallback: false,
+        fallback: 'blocking',
         paths: cities.map(city => ({params: {cityId: city._id.toString()}})),
     }
 }
